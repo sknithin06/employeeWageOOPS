@@ -14,11 +14,25 @@ public class employee {
 		 	System.out.println("Employee is Present");
 		else
 			System.out.println("Employee is Absent");
-		}
+	}
+	void calculateDailyWage () {
+		int isPresent = 1;
+		double empcheck = Math.floor(Math.random() * 10) % 2;
+		double Salary=(empHrs * empRatePerHrs) ;
+		 if (empcheck == isPresent) {
+			 System.out.println("Salary is ="+Salary);
+		 }
+		 else {
+			Salary = 0;
+		 	System.out.println("Salary is ="+Salary);
+		 }
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to EmployeeWage");
 		
 		employee people = new employee();
 		people.checkEmployee();
+		people.calculateDailyWage();
+		
 	}
 }
