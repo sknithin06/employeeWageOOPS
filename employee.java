@@ -59,6 +59,25 @@ public class employee {
 		 double empWages = Emphrs * empRatePerHrs;
 		 System.out.println("empwage is:"+empWages);
 	}
+	void calculateMonthlyWage () {
+		int emphrs = 0, empwage = 0, totalEmpWage = 0;
+		 for (int day = 0; day < numWorkingDays; day++) {
+			 int EmployeeCheck = (int) Math.floor(Math.random() * 10) % 3;
+			 switch ( EmployeeCheck ) {
+			 	case  isFulltime :
+			 		  emphrs = 8;
+			 		break ;
+			 	case  isParttime :
+			 		 emphrs = 4;
+			 		break;
+			 	default:
+			 		 emphrs = 0;
+			 }
+			 empwage = emphrs * empRatePerHrs;
+			 totalEmpWage += empwage;
+		}
+		 System.out.println("totalEmpWage is:"+totalEmpWage);
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to EmployeeWage");
 		
@@ -67,5 +86,6 @@ public class employee {
 		people.calculateDailyWage();
 		people.calculateAddPartTime();
 		people.calculateUsingSwicth();
+		people.calculateMonthlyWage();
 	}
 }
