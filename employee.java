@@ -43,6 +43,22 @@ public class employee {
 			System.out.println("Salary is ="+salary);
 		 }
 	}
+	void calculateUsingSwicth ( ) {
+		int EmpCheck = (int) Math.floor(Math.random() * 10) % 3;
+		 int Emphrs = 0;
+		 switch ( EmpCheck) {
+		 	case  isFulltime :
+		 		  Emphrs = 8;
+		 		break ;
+		 	case  isParttime :
+		 		 Emphrs = 4;
+		 		break;
+		 	default:
+		 		 Emphrs = 0;
+		 }
+		 double empWages = Emphrs * empRatePerHrs;
+		 System.out.println("empwage is:"+empWages);
+	}
 	public static void main(String[] args) {
 		System.out.println("Welcome to EmployeeWage");
 		
@@ -50,5 +66,6 @@ public class employee {
 		people.checkEmployee();
 		people.calculateDailyWage();
 		people.calculateAddPartTime();
+		people.calculateUsingSwicth();
 	}
 }
