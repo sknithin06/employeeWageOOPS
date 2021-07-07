@@ -78,6 +78,31 @@ public class employee {
 		}
 		 System.out.println("totalEmpWage is:"+totalEmpWage);
 	}
+	void calculateWageDays() {
+		int EMPHRS =0, totalEmpHrs =0, totalWorkingDays =0;
+		 while (totalEmpHrs <= numWorkingDays && 
+				totalWorkingDays < maxHrsMonth) {  
+			 totalWorkingDays++;
+			 int employeeCheck = (int) Math.floor(Math.random() * 10) % 3;
+			 switch ( employeeCheck) {
+			 	case  isFulltime :
+			 		  EMPHRS = 8;
+			 		break ;
+			 	case  isParttime :
+			 		  EMPHRS= 4;
+			 		break;
+			 	default:
+			 		 EMPHRS = 0;
+			 }
+			 totalEmpHrs += EMPHRS;
+			 System.out.println("Day#: " + totalWorkingDays + " Emphr: " +EMPHRS);
+			 int empWages = EMPHRS * empRatePerHrs;
+			 System.out.println("empwage is:"+empWages);
+		 }
+		 int totalEmpWages = totalEmpHrs * empRatePerHrs;
+		 System.out.println("totalEmpWages is:"+totalEmpWages);
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to EmployeeWage");
 		
@@ -87,5 +112,6 @@ public class employee {
 		people.calculateAddPartTime();
 		people.calculateUsingSwicth();
 		people.calculateMonthlyWage();
+		people.calculateWageDays();
 	}
 }
